@@ -1,4 +1,4 @@
-/* CSS Reset (Optional but recommended for consistency across browsers) */
+/* CSS Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,64 +7,76 @@
 
 /* Global Variables */
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2c3e50;
-    --background-color: #f0f0f0;
-    --white-color: #ffffff;
-    --hover-shadow: rgba(0, 0, 0, 0.1);
-    --audio-background: #ecf0f1;
+    --primary-color: #ff0000; /* Neon red */
+    --secondary-color: #000000; /* Black */
+    --background-color: #121212; /* Dark background */
+    --white-color: #f0f0f0;
+    --hover-shadow: rgba(255, 0, 0, 0.5); /* Neon red shadow */
+    --audio-background: #222; /* Dark background for audio players */
     --max-width: 600px;
     --spacing: 20px;
     --footer-padding: 15px;
+    --border-radius: 10px;
+    --text-shadow: 1px 1px 8px rgba(255, 0, 0, 0.7); /* Neon red shadow */
 }
 
 /* General Body Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Helvetica', sans-serif; /* Basic font */
     background-color: var(--background-color);
-    color: #333;
+    color: var(--white-color);
     text-align: center;
     line-height: 1.6;
     padding: var(--spacing);
+    font-size: 1.2em;
 }
 
 /* Header Styling */
 h1 {
-    font-size: 3em;
+    font-size: 3.5em;
     color: var(--primary-color);
     margin-bottom: var(--spacing);
     text-transform: uppercase;
+    text-shadow: 3px 3px 8px rgba(255, 0, 0, 0.9); /* Neon red shadow */
+    letter-spacing: 3px;
 }
 
 /* Music Item Container */
 .music-item {
-    background-color: var(--white-color);
+    background-color: var(--secondary-color);
     padding: 30px;
     margin: var(--spacing) auto;
     width: 80%;
     max-width: var(--max-width);
-    border-radius: 12px;
-    box-shadow: 0 8px 15px var(--hover-shadow);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 20px var(--hover-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid var(--primary-color); /* Neon red border */
 }
 
 .music-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 30px rgba(255, 0, 0, 0.5); /* Neon red hover shadow */
 }
 
 .music-item h3 {
-    font-size: 1.8em;
-    color: var(--secondary-color);
+    font-size: 2em;
+    color: var(--white-color);
     margin-bottom: 15px;
     text-transform: capitalize;
+    text-shadow: var(--text-shadow); /* Neon red text shadow */
+    letter-spacing: 1px;
 }
 
+/* Audio Player */
 audio {
     width: 100%;
     border-radius: 8px;
     outline: none;
     background-color: var(--audio-background);
+    border: 2px solid var(--primary-color); /* Neon red border */
+    box-shadow: 0 0 15px var(--primary-color); /* Neon red shadow */
+    margin-top: 20px;
 }
 
 /* Footer Styling */
@@ -74,10 +86,39 @@ footer {
     color: var(--white-color);
     padding: var(--footer-padding);
     font-size: 1.1em;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     box-shadow: 0 5px 15px var(--hover-shadow);
+    text-align: center;
 }
 
 footer p {
     margin: 0;
+    text-shadow: var(--text-shadow); /* Neon red text shadow */
+}
+
+/* Hover effects for links (if any) */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--white-color);
+    text-shadow: 0 0 10px var(--primary-color); /* Neon red hover text shadow */
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color); /* Neon red scrollbar */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--secondary-color); /* Black track */
 }
