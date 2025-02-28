@@ -1,0 +1,83 @@
+/* CSS Reset (Optional but recommended for consistency across browsers) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Variables */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --background-color: #f0f0f0;
+    --white-color: #ffffff;
+    --hover-shadow: rgba(0, 0, 0, 0.1);
+    --audio-background: #ecf0f1;
+    --max-width: 600px;
+    --spacing: 20px;
+    --footer-padding: 15px;
+}
+
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: #333;
+    text-align: center;
+    line-height: 1.6;
+    padding: var(--spacing);
+}
+
+/* Header Styling */
+h1 {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing);
+    text-transform: uppercase;
+}
+
+/* Music Item Container */
+.music-item {
+    background-color: var(--white-color);
+    padding: 30px;
+    margin: var(--spacing) auto;
+    width: 80%;
+    max-width: var(--max-width);
+    border-radius: 12px;
+    box-shadow: 0 8px 15px var(--hover-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.music-item h3 {
+    font-size: 1.8em;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+audio {
+    width: 100%;
+    border-radius: 8px;
+    outline: none;
+    background-color: var(--audio-background);
+}
+
+/* Footer Styling */
+footer {
+    margin-top: 40px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: var(--footer-padding);
+    font-size: 1.1em;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--hover-shadow);
+}
+
+footer p {
+    margin: 0;
+}
