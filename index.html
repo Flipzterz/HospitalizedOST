@@ -5,6 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospitalized OST</title>
     <link rel="stylesheet" href="Style.css">
+    <script>
+        // Function to check if the user is on iOS
+        function isIOS() {
+            return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        }
+
+        // Function to update audio sources for iOS
+        function updateAudioSources() {
+            if (isIOS()) {
+                document.querySelectorAll("audio").forEach(audio => {
+                    let source = audio.querySelector("source");
+                    if (source) {
+                        let oggSrc = source.getAttribute("src");
+                        let mp3Src = oggSrc
+                            .replace("Music/Beginning.ogg", "Music/Music_Beginning.mp3")
+                            .replace("Music/The-Fall.ogg", "Music/Music_The-Fall.mp3")
+                            .replace("Music/The-Woman.ogg", "Music/Music_The-Woman.mp3");
+
+                        source.setAttribute("src", mp3Src);
+                        source.setAttribute("type", "audio/mp3");
+                        audio.load(); // Reload the audio element to apply changes
+                    }
+                });
+            }
+        }
+
+        // Run the function on page load
+        window.onload = updateAudioSources;
+    </script>
 </head>
 <body>
 
@@ -13,7 +42,7 @@
 <div class="music-item">
     <h3>Where It All Begins</h3>
     <audio controls>
-        <source src="Music/Beginning.ogg" type="audio/mp3">
+        <source src="Music/Beginning.ogg" type="audio/ogg">
         Your browser does not support the audio element.
     </audio>
 </div>
@@ -21,7 +50,7 @@
 <div class="music-item">
     <h3>The Fall</h3>
     <audio controls>
-        <source src="Music/The-Fall.ogg" type="audio/mp3">
+        <source src="Music/The-Fall.ogg" type="audio/ogg">
         Your browser does not support the audio element.
     </audio>
 </div>
@@ -29,7 +58,7 @@
 <div class="music-item">
     <h3>The Woman</h3>
     <audio controls>
-        <source src="Music/The-Woman.ogg" type="audio/mp3">
+        <source src="Music/The-Woman.ogg" type="audio/ogg">
         Your browser does not support the audio element.
     </audio>
 </div>
